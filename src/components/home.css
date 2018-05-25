@@ -1,0 +1,76 @@
+.home {
+  margin: 10px 230px 0 230px;
+  border-radius: 1%;
+  height: 1000px;
+}
+.newsList {
+  height: 1700px;
+  width: 600px;
+  /* background-color: aquamarine; */
+  float: left;
+  border: 1px solid gainsboro;
+  /* z-index: 2; */
+  border-radius: 1%;
+}
+.newsListImg {
+  width: 300px;
+  height: 150px;
+  float: left;
+  margin: 0 0 0 10px;
+  border-radius: 1%;
+}
+.moreInfo {
+  margin-left: 650px;
+
+}
+.newsType {
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid gainsboro;
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 1%;
+}
+.newsType>div {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.newsType>div:hover {
+  cursor: pointer;
+}
+
+.newwrap {
+  height: 150px;
+  width: 600px;
+  border-bottom: 1px solid gainsboro;
+  margin-top:10px;
+  padding-bottom: 10px;
+
+}
+.newwrap:hover {
+  cursor: pointer;
+}
+.newinfo {
+  position: relative;
+  margin-left: 310px;
+  width: 260px;
+  top: 20px;
+  left: 30px;
+  height: 140px;
+  font-size: 14px;
+  /* text-align: center; */
+}
+
+
+
+.moreInfo {
+  /* position: relative; */
+}
+.about {
+  margin: 30px 0 0 40px;
+  width: 200px;
+  text-align: center;
+}
+.wenzi {
+  font-size: 14px;
+}

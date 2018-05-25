@@ -1,0 +1,57 @@
+.registerForm {
+  background-color: #FAFAFA;
+  width: 600px;
+  height: 600px;
+  margin: 5vh auto 0;  
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  /* border: 1px solid gainsboro; */
+}
+.avatar {
+  /* font-size: 20px; */
+  /* text-align:center; */
+  /* border: 1px solid gainsboro; */
+  margin:0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.avatarpost {
+  font-size: 18px;
+  border: 1px solid gainsboro;
+  background-color: #FAFAFA;
+  margin:0 auto;
+  width: 150px;
+  height: 35px;
+  border-radius: 5%;
+}
+.inputRegister {
+  font-size: 14px;
+  text-align:center;
+  border: 1px solid gainsboro;
+  margin:0 auto;
+  width: 300px;
+  height: 35px;
+  border-radius: 5%;
+}
+.Register {
+  font-size: 18px;
+  border: 1px solid blue;
+  background-color: #FAFAFA;
+  margin:0 auto;
+  width: 100px;
+  height: 35px;
+  border-radius: 5%;
+}
+.Register:hover{
+  cursor: pointer;
+}
+#avatarfile {
+  display: none;
+}
+.registerInfo {
+  color: red;
+  margin:0 auto;
+  display: none;
+}

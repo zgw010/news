@@ -1,0 +1,116 @@
+body {
+  background-color: #FAFAFA;
+  margin: 0;
+}
+header {
+  padding: 0;
+  margin: 0;
+  border: 1px solid gainsboro;
+  background-color: #FFFFFF;
+}
+.header {
+  width: 950px;
+  margin: 28px auto 18px;
+  display:flex;
+  justify-content: space-between;
+}
+.nologinHeadMenu {
+  background: #FAFAFA;
+  margin-left: 77px;
+  position: absolute;
+  top: 80px;
+  border: 1px solid gainsboro;
+  border-radius: 5%;
+  padding: 10px;
+  display: none;
+}
+.loginHeadMenuTrue {
+  background: #FAFAFA;
+  margin-left: 62px;
+  position: absolute;
+  top: 80px;
+  border: 1px solid gainsboro;
+  border-radius: 5%;
+  padding: 10px;
+  display: none;
+}
+.loginHeadMenuFalse {
+  background: #FAFAFA;
+  margin-left: 62px;
+  position: absolute;
+  top: 80px;
+  border: 1px solid gainsboro;
+  border-radius: 5%;
+  padding: 10px;
+  display: none;
+}
+.triangle {
+  position: absolute;
+  top:-17px;
+  right:35px;
+  width:0; 
+  height:0;
+  border-width:8px;
+  border-style:solid;
+  border-color :transparent transparent gainsboro transparent;
+}
+.headMenuA {
+  text-decoration:none;
+  display:block;
+  color: black;
+}
+.aa {
+  text-decoration: none;
+  color: black;
+}
+
+.newsIcon {
+  margin: 20px;
+  font-size: 40px;
+}
+.all {
+  margin: 20px;
+  font-size: 20px;
+}
+.all:hover {
+  cursor: pointer;
+}
+.hot {
+  margin: 20px;
+  font-size: 20px;
+}
+.hot:hover {
+  cursor: pointer;
+}
+.searchInput {
+  border: 1px solid gainsboro;
+  height: 25px;
+  margin: 10px;
+}
+.collection {
+  margin: 5px 20px 5px 20px;
+}
+.collection:hover {
+  cursor: pointer;
+}
+.account {
+  margin: 5px 30px 5px 20px;
+}
+.account:hover {
+  cursor: pointer;
+}
+.homeNew {
+  margin: 10px auto 0 auto;
+  width: 800px;
+  background-color: #FAFAFA;
+}
+.newsImgs {
+
+  max-width: 850px;
+  max-height: 500px;
+  margin: 5px 50px 5px 50px;
+  border-radius: 0.5%;
+}
+img {
+  max-width: 800px;
+}
