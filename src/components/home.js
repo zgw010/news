@@ -77,7 +77,6 @@ class Home extends React.Component {
                   <div index={_id}>发表用户 : {user}</div>
                   <div index={_id}>发表时间 : {time}</div>
                 </div>
-              
                 
               </div>
               

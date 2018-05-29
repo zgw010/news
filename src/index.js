@@ -6,6 +6,8 @@ import Login from './components/login.js'
 import Register from './components/register.js';
 import Publish from './components/publish.js';
 import Home from './components/home.js';
+import Mynew from './components/mynews.js';
+import Updatenew from './components/updatenew.js';
 import './index.css';
 import {BrowserRouter ,Route ,Switch } from 'react-router-dom' // 引入路由
 ReactDOM.render(
@@ -16,8 +18,11 @@ ReactDOM.render(
         <Route path='/login' component={Login}/>
         <Route path='/Register' component={Register}/>
         <Route path='/publish' component={Publish}/>
-        <Route path='/news' component={New}/>
+        {/* <Route path='/news' component={New}/> */}
+        <Route path='/mynew' component={Mynew}/>
+        <Route path='/updatenew/:id' component={Updatenew}/>        
         <Route path='/:index' component={New}/>
+        
         <Route path='/' component={Home}/>
         
       </Switch>

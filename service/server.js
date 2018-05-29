@@ -1,9 +1,10 @@
 const fs = require('fs');
 const express = require ('express');
 const multer  = require('multer')
-// 最终文件会保存在service/upload目录中
-const uploadavatar = multer({ dest: 'uploadavatar/' })
+// 最终文件会保存在service/uploadimg目录中
 const uploadimg = multer({ dest: 'uploadimg/' })
+const uploadavatar = multer({ dest: 'uploadavatar/' })
+
 const {User,News} = require('./model.js');
 // const News = require('./model.js');
 const bodyParser = require('body-parser');
@@ -39,7 +40,7 @@ app.post('/upavatar', uploadavatar.single('file'),function(req,res){
 
 })
 
-app.post('/upimg', uploadimg.single('file'),function(req,res){
+app.post('/upimg', uploadimg.single('imgfile'),function(req,res){
   // console.log("req.body:",req.body);
   // console.log("req.file:",req.file.size);
   if(req.file.mimetype==="image/jpeg"&&req.file.size<5000000){
@@ -157,6 +158,25 @@ app.post('/newcomment',function(req,res){
 
 })
 
+// 更新新闻
+app.post('/updatenew',function(req,res){
+  console.log("req.body:",req.body);
+  const {_id,time,content,type,img,tittle}=req.body;
+
+
+  News.update({_id:req.body._id},{time,content,type,img,tittle}, function (err, doc) {
+    if (err) {
+      return console.log('err',err);
+    }
+      // saved!
+    return res.json({
+      code: 0,
+      msg: "评论成功！"
+    });
+  });
+
+})
+
 app.get('/news',function(req,res){
   // const news=req.body;
   console.log(req.query.ID.slice(1))
@@ -209,6 +229,53 @@ app.get('/home',function(req,res){
     });
   })
 });
+
+
+app.get('/mynews',function(req,res){
+  // console.log(req.query)
+  const user=req.query.USER.slice(4)
+  // console.log(queryuser)
+  News.find({user}).sort({'_id':-1}).exec(function(err, doc){
+    if(err){
+      return res.json({
+        code: 1,
+        msg: "获取新闻列表失败！"
+      });
+      
+    }
+    // console.log(doc)
+    return res.json({
+      code: 0,
+      msg: "获取新闻列表成功！",
+      doc:doc
+    });
+  })
+});
+
+
+app.delete('/deletenews',function(req,res){
+  console.log(req.query.NEWID)
+  const _id=req.query.NEWID;
+  // News.create({tittle,time,content,user,type,img}, function (err, doc) {
+    // if (err) {
+    //   return console.log('err',err);
+    // }
+    //   // saved!
+    // return res.json({
+    //   code: 0,
+    //   msg: "fabiao成功！"
+    // });
+  // });
+  News.deleteOne({_id},function(err,doc){
+    if (err) {
+      return console.log('err',err);
+    }
+    return res.json({
+      code: 0,
+      msg: "delete ok！"
+    });
+  })
+})
 
 app.listen(9003,function(){
   console.log("ok 9003",User);

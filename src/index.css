@@ -44,7 +44,17 @@ header {
   padding: 10px;
   display: none;
 }
-.triangle {
+.trianglea {
+  position: absolute;
+  top:-17px;
+  right:18px;
+  width:0; 
+  height:0;
+  border-width:8px;
+  border-style:solid;
+  border-color :transparent transparent gainsboro transparent;
+}
+.triangleb {
   position: absolute;
   top:-17px;
   right:35px;

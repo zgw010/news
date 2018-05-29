@@ -21,7 +21,6 @@ class Login extends React.Component{
         // console.log(c)
         // 把用户的发表权限和用户名储存在cookie中
         document.cookie = res.data.permission+user;
-        console.log(document.cookie)
       } else {
         console.log('err axios');
         registerInfo.style.display='block';

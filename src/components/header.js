@@ -12,8 +12,7 @@ class Header extends React.Component{
     }
   }
   handleClick(){
-    console.log(document.cookie)
-    
+    const  headMenunone=document.querySelector(". headMenunone")
     const loginHeadMenuTrue=document.querySelector(".loginHeadMenuTrue")
     const loginHeadMenuFalse=document.querySelector(".loginHeadMenuFalse")
     const nologinHeadMenu=document.querySelector(".nologinHeadMenu")    
@@ -62,22 +61,22 @@ class Header extends React.Component{
             <a title="我的收藏"><img className='collection' src={collection}/></a>
             <a title="个人中心"><img className='account' src={account} onClick={()=>{this.handleClick()}}/></a>
             <div className="nologinHeadMenu" style={{zIndex:'5'}} >
-              <span className="triangle"></span>
+              <span className="trianglea"></span>
               <a className="headMenuA" href="http://localhost:3000/login">登陆</a>
               <hr/>
               <a className="headMenuA" href="http://localhost:3000/register">注册</a>
             </div>
             <div className="loginHeadMenuTrue"  style={{zIndex:'5'}}>
-              <span className="triangle"></span>
+              <span className="triangleb"></span>
               <Link className="headMenuA" to="/userinfo">个人信息</Link>
               <hr/>
               <Link className="headMenuA" to="/publish">发表新闻</Link>
               <hr/>
-              <Link className="headMenuA" to="/publish">历史发布</Link>
+              <Link className="headMenuA" to="/mynew">历史发布</Link>
 
             </div>
             <div className="loginHeadMenuFalse"  style={{zIndex:'5'}}>
-              <span className="triangle"></span>
+              <span className="triangleb"></span>
               <Link className="headMenuA" to="/userinfo">个人信息</Link>           
             </div>
           </div>

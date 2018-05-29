@@ -1,7 +1,5 @@
 import axios from "axios";
 import React from 'react'
-const title='成都一SUV野蛮转圈后冲撞人群 司机涉嫌危害公共安全被拘';
-
 
 class New extends React.Component{
   constructor(props){

@@ -106,7 +106,7 @@ class Register extends React.Component{
       <div className='registerForm'>
         <img src="https://pic4.zhimg.com/da8e974dc_xl.jpg" className="avatar"/>
         {/* action字段与server.js中的const upload = multer({ dest: 'upload/' }) 呼应 enctype必须设置为"multipart/form-data"才可以传输ormdata数据 */}
-        <form className="avatarForm" action="/upload" enctype="multipart/form-data">
+        <form className="avatarForm" action="/uploadavatar" enctype="multipart/form-data">
           <input type="file" name="file" id="avatarfile" onChange={()=>{this.handleAvatarChange()}}/>
         </form>
         <button className="avatarpost" onClick={()=>document.querySelector('#avatarfile').click()} >点击上传头像</button>
