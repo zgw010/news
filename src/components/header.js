@@ -12,17 +12,17 @@ class Header extends React.Component{
     }
   }
   handleClick(){
-    const  headMenunone=document.querySelector(". headMenunone")
+    const headMenunone=document.querySelector(".headMenunone")
     const loginHeadMenuTrue=document.querySelector(".loginHeadMenuTrue")
     const loginHeadMenuFalse=document.querySelector(".loginHeadMenuFalse")
-    const nologinHeadMenu=document.querySelector(".nologinHeadMenu")    
+    const nologinHeadMenu=document.querySelector(".nologinHeadMenu")
     if(document.cookie===""){
       if(nologinHeadMenu.style.display==="block"){
         nologinHeadMenu.style.display="none";
       }else{
         nologinHeadMenu.style.display="block";
       }
-      
+
     }else {
       if('true'===document.cookie.slice(0,4)){
         if(loginHeadMenuTrue.style.display==="block"){
@@ -44,14 +44,14 @@ class Header extends React.Component{
     }
   }
 
-  
+
   render(){
     return (
-      <header> 
+      <header>
         <div className='header'>
           <div>
-            <span className='newsIcon'><a className="aa" href="http://localhost:3000/">News</a></span>
-            <span className='all' ><a className="aa" href="http://localhost:3000/">首页</a></span>
+            <span className='newsIcon'><Link className="aa" to="/">News</Link></span>
+            <span className='all' ><Link className="aa" to="/">首页</Link></span>
             <span className='hot'>热点</span>
           </div>
           <div className='search'>
@@ -62,9 +62,9 @@ class Header extends React.Component{
             <a title="个人中心"><img className='account' src={account} onClick={()=>{this.handleClick()}}/></a>
             <div className="nologinHeadMenu" style={{zIndex:'5'}} >
               <span className="trianglea"></span>
-              <a className="headMenuA" href="http://localhost:3000/login">登陆</a>
+              <Link className="headMenuA" to="/login">登陆</Link>
               <hr/>
-              <a className="headMenuA" href="http://localhost:3000/register">注册</a>
+              <Link className="headMenuA" to="/register">注册</Link>
             </div>
             <div className="loginHeadMenuTrue"  style={{zIndex:'5'}}>
               <span className="triangleb"></span>
@@ -77,7 +77,7 @@ class Header extends React.Component{
             </div>
             <div className="loginHeadMenuFalse"  style={{zIndex:'5'}}>
               <span className="triangleb"></span>
-              <Link className="headMenuA" to="/userinfo">个人信息</Link>           
+              <Link className="headMenuA" to="/userinfo">个人信息</Link>
             </div>
           </div>
         </div>

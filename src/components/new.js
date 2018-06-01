@@ -18,19 +18,31 @@ class New extends React.Component{
     const commentAddInput=document.querySelector(".commentAddInput");
     const comment=commentAddInput.innerHTML;
     const time=new Date().toLocaleString();
-    const fromuser=document.cookie.slice(7);
+    // 7 -> 4  ???玄学
+    const fromuser=document.cookie.slice(4);
     const touser=this.state.user
     const newsId=this.props.location.pathname.slice(1)
     axios.post("/newcomment",{newsId,comment,time,fromuser,touser}).then(res => {
       if (res.status === 200 && res.data.code === 0) {
         console.log('ok axios');
-        console.log(this.state.comments)        
-        let newcomments=this.state.comments
-        newcomments.push({comment,time,fromuser,touser})
-        console.log(newcomments)
-        this.setState({
-          comments:newcomments
-        })
+        console.log(this.state.comments)
+        let newcomments=[]
+        if(this.state.comments===undefined){
+          newcomments=[];
+          newcomments.push({comment,time,fromuser,touser})
+          this.setState({
+            comments:newcomments
+          })
+        }else {
+          newcomments=this.state.comments
+          newcomments.push({comment,time,fromuser,touser})
+          this.setState({
+            comments:newcomments
+          })
+
+        }
+        
+        
         commentAddInput.innerHTML="";
         
       } else {

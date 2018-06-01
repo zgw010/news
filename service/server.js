@@ -1,9 +1,12 @@
 const fs = require('fs');
 const express = require ('express');
-const multer  = require('multer')
+const multer  = require('multer');
+// const path = require('path');
 // 最终文件会保存在service/uploadimg目录中
+
 const uploadimg = multer({ dest: 'uploadimg/' })
 const uploadavatar = multer({ dest: 'uploadavatar/' })
+
 
 const {User,News} = require('./model.js');
 // const News = require('./model.js');
@@ -25,7 +28,8 @@ app.use(cookieParase());
 app.post('/upavatar', uploadavatar.single('file'),function(req,res){
   // console.log("req.body:",req.body);
   // console.log("req.file:",req.file.size);
-  if(req.file.mimetype==="image/jpeg"&&req.file.size<5000000){
+  // req.file.mimetype==="image/jpeg"&&
+  if(req.file.size<5000000){
     return res.json({
       code: 0,
       msg: "上传头像成功！",
@@ -40,16 +44,19 @@ app.post('/upavatar', uploadavatar.single('file'),function(req,res){
 
 })
 
-app.post('/upimg', uploadimg.single('imgfile'),function(req,res){
-  // console.log("req.body:",req.body);
-  // console.log("req.file:",req.file.size);
-  if(req.file.mimetype==="image/jpeg"&&req.file.size<5000000){
+app.post('/upimg', uploadimg.single('file'),function(req,res,next){
+  console.log("req.body:",req.body);
+  console.log("req.file:",req.file);
+  // req.file.mimetype==="image/jpeg"&&
+  if(req.file.size<5000000){
+    console.log("上传主图成功",req.file)
     return res.json({
       code: 0,
       msg: "上传图片成功！",
       imgname:req.file.filename
     });
   }else {
+    // console.log("err:",res)
     return res.json({
       code: 1,
       msg: "不支持该格式,或者图片大小大于5M,请重新上传！"
@@ -125,7 +132,7 @@ app.post('/publish',function(req,res){
   //     });
   //   }
   const a=req.body;
-  console.log(req.body)
+  // console.log(req.body)
   News.create({tittle,time,content,user,type,img}, function (err, doc) {
     if (err) {
       return console.log('err',err);
@@ -133,7 +140,7 @@ app.post('/publish',function(req,res){
       // saved!
     return res.json({
       code: 0,
-      msg: "fabiao成功！"
+      msg: "发表新闻成功！"
     });
   });
 
@@ -171,7 +178,7 @@ app.post('/updatenew',function(req,res){
       // saved!
     return res.json({
       code: 0,
-      msg: "评论成功！"
+      msg: "修改成功！"
     });
   });
 
@@ -276,6 +283,14 @@ app.delete('/deletenews',function(req,res){
     });
   })
 })
+// app.use(function(req,res,next){
+//   if(req.url.startsWith('/')||req.url.startsWith('/static/')){
+//     return next();
+//   }
+//   console.log('path',path.resolve('build/index.html'))
+//   return res.sendFile(path.resolve('build/index.html'))
+// })
+// app.use('/',express.static(path.resolve('build')))
 
 app.listen(9003,function(){
   console.log("ok 9003",User);
