@@ -132,3 +132,11 @@ Flux带来的最重要的好处就是"单向数据流"的管理方式.
 
 
 
+整体架构:
+
+前端使用html,css,JavaScript,及react框架.后端使用nodejs,及express框架.数据库使用mongodb,使用mongoose与nodejs连接.包管理工具是npm.
+
+使用了create-react-app初始化环境,然后npm run eject 弹出配置.
+
+
+
