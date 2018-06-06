@@ -11,7 +11,7 @@ class Header extends React.Component{
       user:""
     }
   }
-  handleClick(){
+  handleMouseEnter(){
     const headMenunone=document.querySelector(".headMenunone")
     const loginHeadMenuTrue=document.querySelector(".loginHeadMenuTrue")
     const loginHeadMenuFalse=document.querySelector(".loginHeadMenuFalse")
@@ -43,7 +43,11 @@ class Header extends React.Component{
 
     }
   }
-
+  handleMouseLeave(){
+    document.querySelector(".loginHeadMenuTrue").style.display="none";
+    document.querySelector(".loginHeadMenuFalse").style.display="none";
+    document.querySelector(".nologinHeadMenu").style.display="none";
+  }
 
   render(){
     return (
@@ -59,14 +63,14 @@ class Header extends React.Component{
           </div>
           <div>
             <a title="我的收藏"><img className='collection' src={collection}/></a>
-            <a title="个人中心"><img className='account' src={account} onClick={()=>{this.handleClick()}}/></a>
-            <div className="nologinHeadMenu" style={{zIndex:'5'}} >
+            <a title="个人中心"><img className='account' src={account} onMouseEnter={()=>{this.handleMouseEnter()}} /></a>
+            <div className="nologinHeadMenu" style={{zIndex:'5'}} onMouseLeave={()=>{this.handleMouseLeave()}}>
               <span className="trianglea"></span>
               <Link className="headMenuA" to="/login">登陆</Link>
               <hr/>
               <Link className="headMenuA" to="/register">注册</Link>
             </div>
-            <div className="loginHeadMenuTrue"  style={{zIndex:'5'}}>
+            <div className="loginHeadMenuTrue"  style={{zIndex:'5'}} onMouseLeave={()=>{this.handleMouseLeave()}}>
               <span className="triangleb"></span>
               <Link className="headMenuA" to="/userinfo">个人信息</Link>
               <hr/>
@@ -75,7 +79,7 @@ class Header extends React.Component{
               <Link className="headMenuA" to="/mynew">历史发布</Link>
 
             </div>
-            <div className="loginHeadMenuFalse"  style={{zIndex:'5'}}>
+            <div className="loginHeadMenuFalse"  style={{zIndex:'5'}} onMouseLeave={()=>{this.handleMouseLeave()}}>
               <span className="triangleb"></span>
               <Link className="headMenuA" to="/userinfo">个人信息</Link>
             </div>

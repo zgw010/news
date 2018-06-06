@@ -6,6 +6,7 @@ import Login from './components/login.js'
 import Register from './components/register.js';
 import Publish from './components/publish.js';
 import Home from './components/home.js';
+import Game from './components/game.js';
 import Mynew from './components/mynews.js';
 import Updatenew from './components/updatenew.js';
 import './index.css';
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path='/publish' component={Publish}/>
         {/* <Route path='/news' component={New}/> */}
         <Route path='/mynew' component={Mynew}/>
+        <Route path='/game' component={Game}/>
         <Route path='/updatenew/:id' component={Updatenew}/>        
         <Route path='/:index' component={New}/>
         

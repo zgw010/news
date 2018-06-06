@@ -134,9 +134,63 @@ Flux带来的最重要的好处就是"单向数据流"的管理方式.
 
 整体架构:
 
-前端使用html,css,JavaScript,及react框架.后端使用nodejs,及express框架.数据库使用mongodb,使用mongoose与nodejs连接.包管理工具是npm.
+前端主要使用react框架.后端使用nodejs,及express框架.数据库使用mongodb,使用mongoose与nodejs连接.包管理工具是npm.
 
 使用了create-react-app初始化环境,然后npm run eject 弹出配置.
 
+主要目录结构:
 
+![1527835875937](/tmp/1527835875937.png)
+
+service(后端代码):
+
+/uploadavatar 储存用户头像
+/uploadimg      储存新闻主图
+/model.js  	   定义用户和新闻的mongodb数据模型
+/server.js          后端逻辑
+
+![1527835904740](/tmp/1527835904740.png)
+
+src(前端代码):
+
+/components    react代码
+/icons		    图标
+/index.css	    主要的css
+/index.js              项目入口
+
+
+
+### 摘要
+
+**关键词** : `React` `node.js` `mongodb` `组件化`
+
+-----------
+
+## 第一章 绪论
+
+### 1.1 研究工作的背景与意义
+
+### 1.2 前端的历史与现状
+
+### 1.3 本论文的主要探究
+
+### 1.4 本论文的结构安排
+
+## 第二章 课程设计实现基础
+
+
+
+## 第三章 课程设计具体代码实现
+
+
+
+## 第四章 结论
+
+### 4.1 全文总结
+
+### 4.2 后续工作展望
+
+### 致谢
+
+### 参考文献
 

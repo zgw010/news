@@ -47,7 +47,7 @@ header {
 .trianglea {
   position: absolute;
   top:-17px;
-  right:18px;
+  right:22px;
   width:0; 
   height:0;
   border-width:8px;
@@ -57,7 +57,7 @@ header {
 .triangleb {
   position: absolute;
   top:-17px;
-  right:35px;
+  right:42px;
   width:0; 
   height:0;
   border-width:8px;

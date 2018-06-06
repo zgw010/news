@@ -16,7 +16,7 @@ class Home extends React.Component {
     this.props.history.push(`/${index}`);
   }
   componentDidMount(){
-    axios.get("/home").then(res => {
+    axios.get("/game").then(res => {
       if (res.status === 200 && res.data.code === 0) {
         console.log('ok axios');
         console.log(res.data.doc);

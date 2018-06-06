@@ -6,7 +6,7 @@ class Login extends React.Component{
   handleClick(){
     const userInput=document.querySelector('.usernameLogin');
     const pwdInput=document.querySelector('.pwdLogin');
-    const registerInfo=document.querySelector('.registerInfo');  
+    const registerInfo=document.querySelector('.registerInfo');
     let user=userInput.value;
     let pwd=pwdInput.value;
     

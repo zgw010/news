@@ -27,12 +27,11 @@
   margin-top: 20px;
   text-align: center;
   border: 1px solid gainsboro;
-  padding: 10px;
-  padding-top: 30px;
   border-radius: 1%;
 }
+
 .newsType>div {
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 18px;
 }
 .newsType>div:hover {

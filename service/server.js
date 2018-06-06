@@ -1,13 +1,12 @@
 const fs = require('fs');
 const express = require ('express');
+// 引入 multer 库 ,用来保存本地图片到服务器
 const multer  = require('multer');
-// const path = require('path');
-// 最终文件会保存在service/uploadimg目录中
 
+// 最终新闻主图和头像会分别保存在 service/uploadimg 和service/uploadavatar 中
 const uploadimg = multer({ dest: 'uploadimg/' })
 const uploadavatar = multer({ dest: 'uploadavatar/' })
-
-
+//引入 mongodb 数据模型
 const {User,News} = require('./model.js');
 // const News = require('./model.js');
 const bodyParser = require('body-parser');
@@ -236,7 +235,23 @@ app.get('/home',function(req,res){
     });
   })
 });
-
+app.get('/game',function(req,res){
+  News.find({type:"游戏"}).sort({'_id':-1}).exec(function(err, doc){
+    if(err){
+      return res.json({
+        code: 1,
+        msg: "获取新闻列表失败！"
+      });
+      
+    }
+    // console.log(doc)
+    return res.json({
+      code: 0,
+      msg: "获取新闻列表成功！",
+      doc:doc
+    });
+  })
+});
 
 app.get('/mynews',function(req,res){
   // console.log(req.query)
@@ -295,12 +310,3 @@ app.delete('/deletenews',function(req,res){
 app.listen(9003,function(){
   console.log("ok 9003",User);
 })
-// const router=express.Router();
-// router.get("/register", function(req, res) {
-//   res.send('ok 9003');
-//   console.log("ok")
-// });
-// router.post("/register",function(req,res){
-//   console.log('post _ register');
-// })
-// module.exports=router;
