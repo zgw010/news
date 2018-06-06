@@ -4,7 +4,9 @@
 1. npm install 或者 cnpm install 
 2. 打开mongodb
   sudo service mongod start
+  
   mongod
+  
   mongo
 3. 启动服务器
   进入service文件夹下,nodemon server.js
